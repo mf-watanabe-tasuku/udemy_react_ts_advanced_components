@@ -1,27 +1,9 @@
-import { addToCart, removeFromCart, type CartItem } from "../store/cart-slice";
-import { useCartDispatch, useCartSelector } from "../store/hooks";
-
 export default function CartItems() {
-  const dispatch = useCartDispatch();
-
-  const cartItems = useCartSelector(state => state.cart.items);
-  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-  const formattedTotalPrice = totalPrice.toFixed(2);
-
-  function handleAddToCart(item: CartItem) {
-    dispatch(addToCart(item));
-  }
-
-  function handleRemoveFromCart(id: string) {
-    dispatch(removeFromCart(id));
-  }
-
   return (
     <div id="cart">
-      {cartItems.length === 0 && <p>No items in cart!</p>}
+      <p>No items in cart!</p>
 
-      {cartItems.length > 0 &&
-        <ul id="cart-items">
+      {/* <ul id="cart-items">
           {cartItems.map((item) => {
             const formattedPrice = `$${item.price.toFixed(2)}`;
 
@@ -41,12 +23,11 @@ export default function CartItems() {
               </li>
             );
           })}
-        </ul>
-      }
+        </ul> */}
 
-      <p id="cart-total-price">
+      {/* <p id="cart-total-price">
         Cart Total: <strong>{formattedTotalPrice}</strong>
-      </p>
+      </p> */}
     </div>
   );
 }
