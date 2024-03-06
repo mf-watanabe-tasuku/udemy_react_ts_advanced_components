@@ -1,11 +1,16 @@
 import studentsImg from '../assets/students.jpg';
 import listImg from '../assets/list.jpg';
 import certificateImg from '../assets/certificate.jpg';
+import Button from '../components/Button';
 
 export default function HomePage() {
   return (
     <main id="home-page">
       <h2>Our Mission: Your Success</h2>
+      <Button>Button</Button>
+      <Button textOnly={true}>Button</Button>
+      <Button to="/hoge">Link</Button>
+      <Button to="/hoge" textOnly={true}>Link</Button>
       <section>
         <img src={studentsImg} alt="A group of students" />
         <div>
