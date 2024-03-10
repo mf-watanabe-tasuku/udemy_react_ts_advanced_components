@@ -1,6 +1,9 @@
 import { SESSIONS } from '../dummy-sessions.ts'; // normally, we would probably load that from a server
+import Button from '../components/UI/Button.tsx';
 
 export default function SessionsPage() {
+  const camelToDash = (str: string) => str.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`);
+
   return (
     <main id="sessions-page">
       <header>
@@ -11,7 +14,24 @@ export default function SessionsPage() {
           you!
         </p>
       </header>
-      {/* Todo: Output list of sessions */}
+      <ul id="sessions-list">
+        {SESSIONS.map(session => {
+          return (
+            <li>
+              <article className='session-item'>
+                <img src={camelToDash(session.image)} alt={session.title} />
+                <div className="session-data">
+                  <div></div>
+                  <p className="actions">
+                    <Button to={session.id}>Learn More</Button>
+                  </p>
+                </div>
+              </article>
+            </li>
+          );
+        })};
+      </ul>
+
     </main>
   );
 }
