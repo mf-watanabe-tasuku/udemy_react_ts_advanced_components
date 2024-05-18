@@ -1,5 +1,5 @@
 import { SESSIONS } from '../dummy-sessions.ts'; // normally, we would probably load that from a server
-import MainHeader from '../components/Navigation/MainHeader';
+import MainHeader from '../components/Navigation/MainHeader.tsx';
 import Button from '../components/UI/Button.tsx';
 
 export default function SessionsPage() {
