@@ -1,9 +1,12 @@
-import Container from './components/Container';
+import { useRef } from 'react';
+import Input from './components/Input';
 
 function App() {
+  const input = useRef<HTMLInputElement>(null);
+
   return (
     <main>
-      <Container as={'a'} onClick={() => {}} href='https://google.com'>Click me</Container>
+      <Input label="Test" id="test" ref={input} />
     </main>
   );
 }
